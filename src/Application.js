@@ -4,7 +4,11 @@ class Application extends Component{
 
     render(){
         return(
-            <h1>Hello World!</h1>
+            <div>
+                <h1>Hello World!</h1>
+            <span>This is the first page of the React Application.</span>
+            </div>
+            
         );
     }
     
