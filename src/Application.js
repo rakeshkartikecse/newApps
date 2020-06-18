@@ -47,6 +47,15 @@ class Application extends Component{
     }
     */
 
+    resetCount =(e)=>{
+        this.setState(
+            {
+                count:0,
+                overTen:false
+            }
+        );
+    }
+
     render(){
         let {count}=this.state;
         //let name="Kartike";
@@ -54,7 +63,10 @@ class Application extends Component{
             <div>
                 <h1>YOu have clicked the button {count} times</h1>
             <span>This is the first page of the React Application.</span>
-            <HighScore />
+            <HighScore 
+            overTen={this.state.overTen}
+            onReset={(e)=> this.resetCount(e)}
+            />
             <span>
                 <button onClick={() => this.handleClick()}>click me</button>
             </span>
