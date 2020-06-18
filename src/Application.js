@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-
+import HighScore from './HighScore';
 class Application extends Component{
     constructor(props){
         super(props);
 
         this.state={
-            count:0
+            count:0,
+            overTen: false
         }
     }
 
@@ -17,7 +18,13 @@ class Application extends Component{
     }
 
     componentDidUpdate(props,state){
-        console.log("Updated from",state,"to",this.state);
+       // console.log("Updated from",state,"to",this.state);
+
+        //this.setState({count: this.state.count+1});
+        if(this.state.count>10 && this.state.count !== state.count && !this.state.overTen){
+            console.log("waiting for Update over10");
+            this.setState({overTen: true});
+        }
     }
    /* componentWillMount(props,state)
     {
@@ -47,6 +54,7 @@ class Application extends Component{
             <div>
                 <h1>YOu have clicked the button {count} times</h1>
             <span>This is the first page of the React Application.</span>
+            <HighScore />
             <span>
                 <button onClick={() => this.handleClick()}>click me</button>
             </span>
