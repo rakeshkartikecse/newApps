@@ -1,0 +1,2 @@
+Hello this is file for check.
+whether git is in use or not.
