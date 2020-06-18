@@ -1,0 +1,9 @@
+body button{
+    border-radius: 80px;
+    padding: 10px 30px;
+    border: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color:#666;
+    background-color:#f00;
+}
