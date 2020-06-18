@@ -12,6 +12,12 @@ class Application extends Component{
 
     handleClick=()=>{
 
+        console.log("Clicked");
+        this.setState({count: this.state.count+1});
+    }
+
+    componentDidUpdate(props,state){
+        console.log("Updated from",state,"to",this.state);
     }
    /* componentWillMount(props,state)
     {
@@ -36,13 +42,13 @@ class Application extends Component{
 
     render(){
         let {count}=this.state;
-        let name="Kartike";
+        //let name="Kartike";
         return(
             <div>
                 <h1>YOu have clicked the button {count} times</h1>
             <span>This is the first page of the React Application.</span>
             <span>
-                <button onClick={(e)=> this.handleClick()}>click me</button>
+                <button onClick={() => this.handleClick()}>click me</button>
             </span>
             </div>
             
